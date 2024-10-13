@@ -39,8 +39,7 @@ public class AutoFillAspect {
      * 前置通知，在通知中进行公共字段的赋值
      */
     @Before("autoFillPointCut()")
-    public void autoFill(JoinPoint joinPoint) {
-        /////////////////////重要////////////////////////////////////
+    public void autoFill(JoinPoint joinPoint) {        /////////////////////重要////////////////////////////////////
         //可先进行调试，是否能进入该方法 提前在mapper方法添加AutoFill注解
         log.info("开始进行公共字段自动填充...");
         // 1.获取当前数据库操作类型
