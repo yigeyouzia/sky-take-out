@@ -53,7 +53,7 @@ public class EmployeeController {
         claims.put(JwtClaimsConstant.EMP_ID, employee.getId());
         String token = JwtUtil.createJWT(
                 jwtProperties.getAdminSecretKey(),
-                jwtProperties.getAdminTtl(), // 时间配置在application配置文件
+                jwtProperties.getAdminTtl(), // 时间配置在application配置文件 7200000
                 claims);
 
         EmployeeLoginVO employeeLoginVO = EmployeeLoginVO.builder()
