@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.EmployeeMapper">
-    <!-- 分页查询 模糊查询-->
     <select id="pageQuery" resultType="com.sky.entity.Employee">
         select * from employee
         <where>
@@ -13,7 +12,6 @@
         order by create_time desc
     </select>
 
-    <!--启用禁用-->
     <update id="update" parameterType="Employee">
         update employee
         <set>
