@@ -11,8 +11,6 @@ import com.sky.properties.WeChatProperties;
 import com.sky.service.UserService;
 import com.sky.utils.HttpClientUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.juli.WebappProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -71,9 +69,9 @@ public class UserServiceImpl implements UserService {
         map.put("js_code", code);
         map.put("grant_type", "authorization_code"); // 授权类型
         String json = HttpClientUtil.doGet(WX_LOGIN, map);
+
         JSONObject jsonObject = JSON.parseObject(json);
         String openid = jsonObject.getString("openid");
-
         return openid;
     }
 }
