@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -88,4 +89,7 @@ public interface DishMapper {
      * @return
      */
     Integer countByMap(Map map);
+
+    @Select("select * from  dish where  category_id = #{categoryId}")
+    ArrayList<Dish> getByCategoryId(Long categoryId);
 }
